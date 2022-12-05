@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pro.sky.telegrambot.command.CommandContainer;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -19,6 +20,12 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     @Autowired
     private TelegramBot telegramBot;
 
+    private final CommandContainer commandContainer;
+
+    public TelegramBotUpdatesListener(CommandContainer commandContainer) {
+        this.commandContainer = commandContainer;
+    }
+
     @PostConstruct
     public void init() {
         telegramBot.setUpdatesListener(this);
@@ -28,7 +35,9 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
     public int process(List<Update> updates) {
         updates.forEach(update -> {
             logger.info("Processing update: {}", update);
-            // Process your updates here
+            if (update.message() != null && update.message().text() != null) {
+                commandContainer.retrieveCommand(update.message().text()).execute(update);
+            }
         });
         return UpdatesListener.CONFIRMED_UPDATES_ALL;
     }
