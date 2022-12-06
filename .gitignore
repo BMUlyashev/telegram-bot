@@ -1,3 +1,4 @@
 /.idea/
 mvnw*
 /target/
+/src/main/resources/application-dev.properties
