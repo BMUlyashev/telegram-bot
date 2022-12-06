@@ -9,6 +9,7 @@ public class HelpCommand implements Command {
 
     private final TelegramBotSender telegramBotSender;
 
+    public final static String HELP_COMMAND = "/help";
     public static final String HELP_MESSAGE = "Я принимаю запрос в формате:\ndd.mm.yyyy hh:mm твое напоминание\n"
             + "Пример:\n"
             + "04.12.2022 18:45 Позвонить в автосервис\n";

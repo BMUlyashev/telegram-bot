@@ -9,7 +9,8 @@ public class StartCommand implements Command {
 
     private final TelegramBotSender telegramBotSender;
 
-    private final String START_MESSAGE = "Привет! " + "\uD83D\uDC4B\n" +
+    public final static String START_COMMAND = "/start";
+    private final static String START_MESSAGE = "Привет! " + "\uD83D\uDC4B\n" +
             "Я BMUlyashevBot. Я могу помочь тебе сохранять твои напоминания и присылать тебе уведомления в то время, " +
             "которое ты указал в запросе. \nНапишите /help чтобы узнать что я понимаю.";
 

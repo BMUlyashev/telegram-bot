@@ -31,8 +31,8 @@ public class CommandContainer {
         this.unknownCommand = unknownCommand;
 
         commandMap = new HashMap<>();
-        commandMap.put("/start", startCommand);
-        commandMap.put("/help", helpCommand);
+        commandMap.put(StartCommand.START_COMMAND, startCommand);
+        commandMap.put(HelpCommand.HELP_COMMAND, helpCommand);
 
         commandMap.put(CreateNotifyCommand.CREATE_NOTIFY_COMMAND, createNotifyCommand);
 

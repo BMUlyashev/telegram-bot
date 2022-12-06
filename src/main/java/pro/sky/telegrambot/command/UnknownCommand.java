@@ -9,7 +9,7 @@ public class UnknownCommand implements Command {
 
     private final TelegramBotSender telegramBotSender;
 
-    private final String UNKNOWN_COMMAND_MESSAGE = "Не понимаю вас \uD83D\uDE1F, напишите /help чтобы узнать что я понимаю.";
+    private final static String UNKNOWN_COMMAND_MESSAGE = "Не понимаю вас \uD83D\uDE1F, напишите /help чтобы узнать что я понимаю.";
 
     public UnknownCommand(TelegramBotSender telegramBotSender) {
         this.telegramBotSender = telegramBotSender;

@@ -21,8 +21,8 @@ public class CreateNotifyService {
     private final PlannerRepository plannerRepository;
     private final RecordMapper recordMapper;
 
-    private final String WRONG_FORMAT_DATE = "Неверно задан формат даты и времени запроса!\nПопробуйте изменить запрос";
-    private final String TOO_OLD_DATE = "Указанное Вами время уже прошло\nПопробуйте изменить запрос";
+    private final static String WRONG_FORMAT_DATE = "Неверно задан формат даты и времени запроса!\nПопробуйте изменить запрос";
+    private final static String TOO_OLD_DATE = "Указанное Вами время уже прошло\nПопробуйте изменить запрос";
 
     private final Logger logger = LoggerFactory.getLogger(CreateNotifyService.class);
 

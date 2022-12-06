@@ -36,7 +36,6 @@ public class SendNotifyService {
     }
 
     private Collection<Planner> checkPlannerForTask() {
-        LocalDateTime time = LocalDateTime.now();
         return plannerRepository.findTask(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
     }
 

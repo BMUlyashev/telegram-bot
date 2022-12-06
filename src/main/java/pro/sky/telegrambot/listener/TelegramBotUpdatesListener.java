@@ -17,12 +17,12 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
 
     private Logger logger = LoggerFactory.getLogger(TelegramBotUpdatesListener.class);
 
-    @Autowired
-    private TelegramBot telegramBot;
+    private final TelegramBot telegramBot;
 
     private final CommandContainer commandContainer;
 
-    public TelegramBotUpdatesListener(CommandContainer commandContainer) {
+    public TelegramBotUpdatesListener(TelegramBot telegramBot, CommandContainer commandContainer) {
+        this.telegramBot = telegramBot;
         this.commandContainer = commandContainer;
     }
 

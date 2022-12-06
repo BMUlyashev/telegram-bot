@@ -16,6 +16,7 @@ public class TelegramBotSender {
 
     private final Logger logger = LoggerFactory.getLogger(TelegramBotSender.class);
 
+
     @Autowired
     public TelegramBotSender(TelegramBot telegramBot) {
         this.telegramBot = telegramBot;
